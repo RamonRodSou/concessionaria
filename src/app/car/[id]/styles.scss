@@ -1,0 +1,15 @@
+.container-car {
+    margin-top: 10rem;
+
+    .grid-data {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 2rem;
+
+        .title-car {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+    }
+}

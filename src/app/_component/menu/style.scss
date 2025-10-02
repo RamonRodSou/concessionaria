@@ -1,0 +1,121 @@
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--foreground);
+    z-index: 1000;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+
+    .menu-inner {
+        margin: 0 auto;
+        padding: 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        width: 30px;
+        height: 25px;
+        background: none;
+        border: none;
+        cursor: pointer;
+
+        span {
+            height: 3px;
+            width: 100%;
+            background: var(--primary);
+            border-radius: 3px;
+            transition: all 0.3s;
+            z-index: 99;
+        }
+
+        &.open span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        &.open span:nth-child(2) {
+            opacity: 0;
+        }
+
+        &.open span:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+    }
+
+    .menu-list {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100dvh;
+        width: 200px;
+        background: var(--foreground);
+        flex-direction: column;
+        padding: 2rem 1rem;
+        list-style: none;
+        display: flex;
+        gap: 1.5rem;
+        transition: right 0.3s ease;
+
+        li a {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 500;
+            font-size: 1.2rem;
+            transition: 0.3s;
+            cursor: pointer;
+
+            &:hover {
+                color: var(--secundary);
+            }
+        }
+    }
+
+    .menu-list-open {
+        right: 0;
+    }
+
+    @media (min-width: 768px) {
+        padding: 0 5rem;
+
+        .menu-toggle {
+            display: none;
+        }
+
+        .menu-list {
+            position: static;
+            flex-direction: row;
+            display: flex;
+            gap: 2rem;
+            width: auto;
+            padding: 0;
+            height: auto;
+            background: transparent;
+        }
+    }
+}
+
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100dvh;
+    background: rgba(0, 0, 0, 0.649);
+    z-index: 900;
+    animation: fadeIn 0.3s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

@@ -1,0 +1,42 @@
+:root {
+    .box-button {
+        display: flex;
+        justify-content: center;
+
+        &.show {
+            display: none;
+        }
+
+        .button {
+            background-color: var(--primary);
+            padding: 1rem;
+            transition: transform 0.3s ease;
+            height: 60px;
+            width: 80%;
+
+            &:hover {
+                transform: scale(0.90);
+                background-color: var(--background);
+                color: var(--primary);
+                border: 1px solid var(--primary);
+            }
+        }
+    }
+
+    @media (min-width: 800px) {
+        .box-button {
+            justify-content: start;
+        }
+
+        .button {
+            width: 70%;
+            font-size: 1.2rem;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .box-button {
+            justify-content: start;
+        }
+    }
+}

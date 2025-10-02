@@ -1,0 +1,23 @@
+:root {
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 1000;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    main {
+        display: flex;
+        flex-direction: column;
+    }
+
+    footer {
+        padding-top: 4rem;
+    }
+}

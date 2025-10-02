@@ -1,0 +1,18 @@
+:root {
+    .logo {
+        width: 50px;
+        cursor: pointer;
+    }
+
+    @media (min-width: 800px) {
+        .logo {
+            width: 50px;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .logo {
+            width: 70px;
+        }
+    }
+}

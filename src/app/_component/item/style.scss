@@ -1,0 +1,126 @@
+.carousel-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-top: 2rem;
+    padding: 2rem;
+
+    @media (max-width: 768px) {
+        width: 100%;
+        padding: 0.5rem 0;
+    }
+
+    .carousel {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        gap: 1rem;
+        padding: 1rem 0;
+        cursor: grab;
+        width: 80%;
+        -webkit-overflow-scrolling: touch;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+
+        @media (max-width: 768px) {
+            width: 100%;
+            padding: 0.5rem 0;
+        }
+    }
+
+    .car-box {
+        flex: 0 0 calc(50% - 0.5rem);
+        scroll-snap-align: start;
+
+        @media (max-width: 1024px) {
+            flex: 0 0 60%;
+        }
+
+        @media (max-width: 768px) {
+            flex: 0 0 90%;
+        }
+
+        @media (max-width: 480px) {
+            flex: 0 0 95%;
+        }
+    }
+
+    .car-card {
+        border-radius: 12px;
+        overflow: hidden;
+        background: #fff;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        transition: transform 0.3s ease;
+
+        &:hover {
+            transform: translateY(-4px);
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .year-chip {
+            margin: 0.5rem 0 1rem;
+            font-size: 0.85rem;
+
+            @media (max-width: 480px) {
+                font-size: 0.75rem;
+            }
+        }
+
+        .car-price {
+            color: #2e7d32;
+            font-weight: bold;
+            margin-top: 0.5rem;
+            font-size: 1.2rem;
+
+            @media (max-width: 480px) {
+                font-size: 1rem;
+            }
+        }
+
+        .MuiTypography-h5 {
+            font-size: 1.1rem;
+            font-weight: 600;
+
+            @media (max-width: 480px) {
+                font-size: 1rem;
+            }
+        }
+    }
+
+    .arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 2;
+        background-color: rgba(255, 255, 255, 0.7);
+        transition: background-color 0.3s ease;
+
+        &:hover {
+            background-color: white;
+        }
+
+        &.left {
+            left: 0px;
+        }
+
+        &.right {
+            right: 0px;
+        }
+
+        @media (max-width: 768px) {
+            display: none;
+        }
+    }
+}
