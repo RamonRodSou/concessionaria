@@ -35,30 +35,9 @@ export default function HeroCarousel({ slides }: HeroCarouselProps) {
                         sx={{
                             position: 'relative',
                             width: '100%',
-                            height: 400
+                            height: { xs: 180, sm: 250, md: 400 }
                         }}
-                    ><Box component="section" className="hero-carousel">
-                            <Slider {...settings}>
-                                {slides.map((image, index) => (
-                                    <Box
-                                        key={index}
-                                        sx={{
-                                            position: 'relative',
-                                            width: '100%',
-                                            height: 400
-                                        }}
-                                    >
-                                        <Image
-                                            src={image}
-                                            alt={`Slide ${index + 1}`}
-                                            fill
-                                            style={{ objectFit: "cover" }}
-                                            priority={index === 0}
-                                        />
-                                    </Box>
-                                ))}
-                            </Slider>
-                        </Box>
+                    >
 
                         <Image
                             src={image}
