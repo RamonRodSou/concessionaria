@@ -10,6 +10,7 @@ export class Car {
         public image: string[] = [],
         public price: string = EMPTY,
         public year: string = EMPTY,
+        public type: string = EMPTY,
         public createdAt: string = new Date().toISOString(),
     ) { }
 
@@ -21,6 +22,7 @@ export class Car {
             json.image || [],
             json.price,
             json.year,
+            json.type,
             json.createdAt
         );
     }
@@ -33,6 +35,7 @@ export class Car {
             image: this.image,
             price: this.price,
             year: this.year,
+            type: this.type,
             createdAt: this.createdAt
         };
     }

@@ -59,7 +59,10 @@ export default function Item() {
                             <Card className="car-card">
                                 <CardMedia component="img" height="200" image={it.image.at(0)} alt={it.model} />
                                 <CardContent>
-                                    <Typography gutterBottom variant="h5">{it.model}</Typography>
+                                    <Box className="flex justify-between items-center">
+                                        <Typography gutterBottom variant="h5">{it.model}</Typography>
+                                        <Typography variant="body2" color="text.secondary">{it.type}</Typography>
+                                    </Box>
                                     <Chip label={it.year} color="primary" className="year-chip" />
                                     <Typography variant="body2" color="text.secondary">{it.description}</Typography>
                                     <Typography variant="h5" className="car-price">R$: {it.price}</Typography>

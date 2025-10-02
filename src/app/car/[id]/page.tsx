@@ -75,9 +75,13 @@ export default function CarDetailPage() {
                         </Grid>
 
                         <Grid className="grid-data">
-                            <Typography variant="body1" className='title-car' component="h3" gutterBottom>
-                                {car.model}
-                            </Typography>
+                            <Box className="flex justify-between items-center">
+                                <Typography variant="body1" className='title-car' component="h3" gutterBottom>
+                                    {car.model}
+                                </Typography>
+                                <Typography variant="body2" color="text.secondary">{car.type}</Typography>
+
+                            </Box>
 
                             <Box sx={{ mb: 2 }}>
                                 <Chip label={`Ano: ${car.year}`} color="primary" />
