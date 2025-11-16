@@ -7,24 +7,13 @@ import Slider from "react-slick";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { settings } from '@utils/settings';
 
 interface HeroCarouselProps {
     slides: StaticImageData[];
 }
 
 export default function HeroCarousel({ slides }: HeroCarouselProps) {
-    const settings = {
-        dots: true,
-        infinite: true,
-        speed: 1000,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 3000,
-        fade: true,
-        cssEase: 'linear',
-        arrows: true
-    };
 
     return (
         <Box component="section" className='hero'>

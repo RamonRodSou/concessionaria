@@ -37,7 +37,10 @@
       ],
       "@utils/*": [
         "./libs/utils/*"
-      ]
+      ],
+      "@service/*": [
+        "./service/*"
+      ],
     }
   },
   "include": [

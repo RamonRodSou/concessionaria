@@ -9,7 +9,6 @@ export default function Menu() {
     const [open, setOpen] = useState(false);
     const router = useRouter();
 
-
     const toggleMenu = () => setOpen(!open);
 
     function navToHome() {
@@ -18,6 +17,10 @@ export default function Menu() {
 
     function navToForm() {
         router.push(`/#talkToUs`);
+    }
+
+    function navToLogin() {
+        router.push(`/login`);
     }
 
     return (
@@ -36,6 +39,9 @@ export default function Menu() {
                         </li>
                         <li>
                             <a href="#talkToUs" onClick={navToForm}>Agendamento</a>
+                        </li>
+                        <li>
+                            <a onClick={navToLogin}>Login</a>
                         </li>
                         <li>
                             <a

@@ -1,0 +1,41 @@
+.btns {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    gap: .5rem;
+    position: absolute;
+    bottom: 20;
+    right: 0;
+    margin: 0 1rem;
+
+    .title-and-editBtn {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .editBtn {
+            background-color: var(--secondary-background);
+            color: var(--primary-color);
+
+            &:hover {
+                background-color: var(--secondary-background-hover);
+            }
+
+            &:active {
+                background-color: var(--secondary-background-active);
+            }
+        }
+    }
+
+    .delete {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        .deleteBtn {
+            background-color: var(--delete-color);
+            color: var(--primary-color);
+        }
+    }
+}
