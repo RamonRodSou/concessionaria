@@ -30,7 +30,7 @@ export default function CategoryCarousel({ title, cars, onCarClick }: CategoryCa
 
     return (
         <Box mb={4}>
-            <Typography variant="h4" gutterBottom sx={{ color: 'var(--secondary)', marginLeft: '1rem' }}>
+            <Typography variant="h4" gutterBottom sx={{ color: 'var(--secundary)', marginLeft: '1rem' }}>
                 {title}
             </Typography>
 
