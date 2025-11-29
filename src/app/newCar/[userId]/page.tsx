@@ -25,8 +25,6 @@ import { Audit } from '@classes/audit/Audit';
 import { auditAdd } from '@service/AuditService';
 import { settings } from '@utils/settings';
 import { EMPTY } from '@utils/string';
-import Menu from '@/app/_component/menu';
-import FooterNav from '@/app/_component/footerNav';
 
 export default function NewCarPage() {
     const [car, setCar] = useState<Car>(new Car());

@@ -3,16 +3,18 @@
 import './styles.scss'
 import { useEffect, useState } from 'react';
 import { Box, Typography, Card, CardMedia, Chip, Button, Grid, Container } from "@mui/material";
+import { NextArrow, PrevArrow } from '@/app/_component/arrow/arrow';
+
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import Slider from "react-slick";
+import Menu from '@/app/_component/menu';
+
 import { Car } from '@classes/car/Car';
-import { useParams, useRouter } from 'next/navigation';
+import { useParams } from 'next/navigation';
 import { findByCarId } from '../../../../service/CarService';
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Menu from '@/app/_component/menu';
-import { NextArrow, PrevArrow } from '@/app/_component/arrow/arrow';
 
 export default function CarDetailPage() {
     const [car, setCar] = useState<Car | null>(null);
@@ -77,9 +79,9 @@ export default function CarDetailPage() {
                         <Grid className="grid-data">
                             <Box className="flex justify-between items-center">
                                 <Typography variant="body1" className='title-car' component="h3" gutterBottom>
-                                    {car.model}
+                                   {car.model}
                                 </Typography>
-                                <Typography variant="body2" color="text.secondary">{car.type}</Typography>
+                                <Typography variant="body2" color="text.secundary">{car.type}</Typography>
 
                             </Box>
 

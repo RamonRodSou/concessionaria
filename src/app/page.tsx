@@ -14,7 +14,7 @@ export default function Home() {
 				<Menu />
 			</header>
 			<main>
-				<HeroCarousel slides={[slide1, slide2]} />
+				{/* <HeroCarousel slides={[slide1, slide2]} /> */}
 				<Item />
 				<TalkToUs />
 			</main>

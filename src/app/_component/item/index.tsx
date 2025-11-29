@@ -44,7 +44,7 @@ export default function Item() {
 
     return (
         <Box id="solution" component="section" className="section">
-            <Typography className="title bold" data-aos="fade-up" gutterBottom>
+            <Typography className="title bold"  style={{ color: 'var(--secundary)' }} data-aos="fade-up" gutterBottom>
                 Nossos Veículos
             </Typography>
             <Box>
