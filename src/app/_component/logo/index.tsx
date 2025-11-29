@@ -7,7 +7,7 @@ export default function Logo() {
 
     return (
         <Box component="div">
-            <a href="#top">
+            <a href="/">
                 <Image
                     src={logoImg}
                     alt="Logo Doutor Visão"

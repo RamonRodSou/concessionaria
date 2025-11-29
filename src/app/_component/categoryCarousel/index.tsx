@@ -58,7 +58,7 @@ export default function CategoryCarousel({ title, cars, onCarClick }: CategoryCa
                                         {it.description}
                                     </Typography>
                                     <Typography variant="h5" className="car-price">R$: {it.price}</Typography>
-                                    <Chip label='Ver mais' style={{ backgroundColor: 'var(--primary-btn)', color: 'var(--secondary)', border: 'none' }} className="year-chip" />
+                                    <Chip label='Ver mais' style={{ backgroundColor: 'var(--primary-btn)', color: 'var(--third)', border: 'none' }} className="year-chip" />
 
                                 </CardContent>
 

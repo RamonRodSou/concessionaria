@@ -201,7 +201,7 @@ export default function NewCarPage() {
         <form onSubmit={handleSubmit} className="details-form">
             <h2>{isEditOrNew}</h2>
 
-            <Paper variant="outlined" sx={{ p: 2, mb: 2 }}>
+            <Paper variant="outlined" sx={{ p: 2, mb: 2, backgroundColor:'var(--third)' }}>
                 <Typography variant="subtitle1" gutterBottom sx={{ color: 'text.primary' }}>
                     Imagens (Máx 3)
                 </Typography>
@@ -354,7 +354,7 @@ export default function NewCarPage() {
                 <Button 
                     type="submit" 
                     variant="contained" 
-                    color="primary" 
+                    sx={{backgroundColor: 'var(--primary-btn)'}}
                     fullWidth
                     disabled={isLoading}
                 >

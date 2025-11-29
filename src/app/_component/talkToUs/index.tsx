@@ -149,7 +149,7 @@ export default function TalkToUs() {
                         />
                     </Box>
 
-                    <Button type="submit" variant="contained" color="primary" fullWidth data-aos="fade-up" data-aos-duration="1000">
+                    <Button type="submit" variant="contained" fullWidth data-aos="fade-up" data-aos-duration="1000" sx={{backgroundColor: 'var(--primary-btn)'}}>
                         {loading ? "Enviando..." : "Agendar"}
                     </Button>
                 </form>

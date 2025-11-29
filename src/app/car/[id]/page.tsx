@@ -86,10 +86,10 @@ export default function CarDetailPage() {
                             </Box>
 
                             <Box sx={{ mb: 2 }}>
-                                <Chip label={`Ano: ${car.year}`} color="primary" />
+                                <Chip label={car.year} style={{ backgroundColor: 'var(--primary-btn)', color: 'var(--third)', border: 'none', fontWeight: 'bold'}} className="year-chip" />
                             </Box>
 
-                            <Typography variant="h4" color="primary" gutterBottom>
+                            <Typography variant="h4"style={{ color: 'var(--primary)' }} gutterBottom>
                                 R$ {car.price}
                             </Typography>
 

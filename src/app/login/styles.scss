@@ -20,7 +20,7 @@
         .title {
             font-size: 2rem;
             font-weight: bold;
-            color: #4c54af;
+            color:  var(--primary-btn);
             text-align: center;
         }
 
@@ -29,12 +29,12 @@
         }
 
         .button {
-            background-color: #4c54af;
+            background-color: var(--primary-btn);
             color: #fff;
             border: none;
             
             &:hover {
-                background-color: #171e69;
+                background-color:  var(--primary-hover);
             }
             &:active {
                 background-color: rgb(11, 21, 65);

@@ -1,3 +1,15 @@
-.container-car {
-    margin-top: 10rem;
+.details-container {
+    padding: 2rem;
+
+    .details-form {
+        background-color: var(--third);
+        padding: 2rem;
+    
+        h2 {
+            font-size: 2rem;
+            color:  var(--primary);
+            margin: 1rem 0;
+        }
+    }
+    
 }

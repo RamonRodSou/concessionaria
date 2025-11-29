@@ -1,4 +1,9 @@
 .dashboard {
     margin-top: 6rem;
     padding: 2rem;
+    background-color: var(--third);
+
+    .tableContainer {
+        background-color: var(--third);
+    }
 }
