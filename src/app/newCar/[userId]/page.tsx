@@ -68,8 +68,20 @@ export default function NewCarPage() {
     }
 
     function handleFileSelect (e: React.ChangeEvent<HTMLInputElement>) {
-        if (e.target.files && e.target.files[0]) {
-            setStagedFile(e.target.files[0]);
+        const file = e.target.files?.[0];
+
+        if (file) {
+            if (file.type !== 'image/jpeg' && file.type !== 'image/jpg') {
+                alert("Formato inválido! Por favor, selecione apenas imagens JPEG ou JPG.");
+                
+                if (fileInputRef.current) {
+                    fileInputRef.current.value = "";
+                }
+                setStagedFile(null);
+                return;
+            }
+
+            setStagedFile(file);
         }
     };
 
@@ -123,43 +135,43 @@ export default function NewCarPage() {
         return router.push(`/dashboard/${userId}`);
     }
 
-	async function handleSubmit(e: React.FormEvent): Promise<void> {
-		e.preventDefault();
-		setIsLoading(true);
-	
-		try {
-			const existingUrls = imagePreviews.filter(url => !url.startsWith('blob:'));
-			const newUploadedUrls = await uploadImages(newFiles, 'carros');
-	
-			const finalImageUrls = [...existingUrls, ...newUploadedUrls];
-	
-			const carData = Car.fromJson({
-				...car,
-				category,
-				type, 
-				image: finalImageUrls 
-			})
-	            
-			if (isEditing) {
+    async function handleSubmit(e: React.FormEvent): Promise<void> {
+        e.preventDefault();
+        setIsLoading(true);
+    
+        try {
+            const existingUrls = imagePreviews.filter(url => !url.startsWith('blob:'));
+            const newUploadedUrls = await uploadImages(newFiles, 'carros');
+    
+            const finalImageUrls = [...existingUrls, ...newUploadedUrls];
+    
+            const carData = Car.fromJson({
+                ...car,
+                category,
+                type, 
+                image: finalImageUrls 
+            })
+                
+            if (isEditing) {
 
                 const audit = Audit.create(isEditOrNew, carData.id);
 
-				await updateCar(carId, carData.toJSON());
+                await updateCar(carId, carData.toJSON());
                 await auditAdd(audit)
 
-			} else {
+            } else {
 
-				await createCar(carData);
-			}
+                await createCar(carData);
+            }
 
         navToDashboard()
-	
-		} catch (error) {
-			console.error("Falha no handleSubmit: ", error);
-		} finally {
-			setIsLoading(false);
-		}
-	}
+    
+        } catch (error) {
+            console.error("Falha no handleSubmit: ", error);
+        } finally {
+            setIsLoading(false);
+        }
+    }
 
     useEffect(() => {
         if (!carId) {
@@ -203,7 +215,7 @@ export default function NewCarPage() {
 
             <Paper variant="outlined" sx={{ p: 2, mb: 2, backgroundColor:'var(--third)' }}>
                 <Typography variant="subtitle1" gutterBottom sx={{ color: 'text.primary' }}>
-                    Imagens (Máx 3)
+                    Imagens (Máx 3) - Apenas JPG/JPEG
                 </Typography>
                 <Box sx={{ display: 'flex', gap: 2, alignItems: 'center' }}>
                     <Button
@@ -215,7 +227,7 @@ export default function NewCarPage() {
                         Selecionar
                         <input
                             type="file"
-                            accept="image/*"
+                            accept="image/jpeg, image/jpg"
                             hidden
                             ref={fileInputRef}
                             onChange={handleFileSelect}

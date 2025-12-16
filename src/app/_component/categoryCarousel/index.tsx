@@ -1,5 +1,3 @@
-// components/CategoryCarousel/CategoryCarousel.tsx
-
 import { useRef } from 'react';
 import { Box, Typography, Card, CardMedia, CardContent, Chip, IconButton } from "@mui/material";
 import { Car } from '@classes/car/Car';
@@ -14,7 +12,13 @@ type CategoryCarouselProps = {
 export default function CategoryCarousel({ title, cars, onCarClick }: CategoryCarouselProps) {
     const scrollContainerRef = useRef<HTMLDivElement>(null);
     
-    const showArrows = cars.length > 1;
+    const activeCars = cars?.filter(car => car.isActive) || [];
+
+    const showArrows = activeCars.length > 1;
+
+    if (activeCars.length === 0) {
+        return null; 
+    }
 
     function handleScrollRight() {
         if (scrollContainerRef.current) {
@@ -41,7 +45,7 @@ export default function CategoryCarousel({ title, cars, onCarClick }: CategoryCa
                     </IconButton>
                 )}
                 <Box ref={scrollContainerRef} className="carousel">
-                    {cars?.map((it) => (
+                    {activeCars.map((it) => (
                         <Box key={it.id} className="car-box" onClick={() => onCarClick(it)}>
                             <Card className="car-card">
                                 <CardMedia component="img" height="100" width="100" image={it.image.at(0)} alt={it.model} />

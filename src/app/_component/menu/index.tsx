@@ -40,9 +40,9 @@ export default function Menu() {
                         <li>
                             <a href="#talkToUs" onClick={navToForm}>Agendamento</a>
                         </li>
-                        <li>
+                        {/* <li>
                             <a onClick={navToLogin}>Login</a>
-                        </li>
+                        </li> */}
                         <li>
                             <a
                                 href={process.env.NEXT_PUBLIC_WHATSAPPS_MSG}
