@@ -20,6 +20,8 @@ export default function CarDetailPage() {
     const [car, setCar] = useState<Car | null>(null);
     const [error, setError] = useState<string | null>(null);
 
+    const API_WHATSAPP = process.env.NEXT_PUBLIC_API_WHATSAPP
+
     const params = useParams();
     const carId = params.id as string;
 
@@ -102,7 +104,12 @@ export default function CarDetailPage() {
                                 color="success"
                                 size="large"
                                 startIcon={<WhatsAppIcon />}
-                                href={`https://api.whatsapp.com/send?phone=5515988400408&text=Olá! Tenho interesse no ${car.model} ${car.year}.`}
+                                href={`${API_WHATSAPP}=Olá! Tenho interesse no: 
+                                    Carro: ${car.model} |
+                                    Ano: ${car.year} |
+                                    Cor: ${car.color} |
+                                    Descrição: ${car.description}.
+                                `}
                                 target="_blank"
                             >
                                 Falar com Vendedor
