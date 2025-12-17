@@ -10,7 +10,7 @@ import Hero from './_component/hero';
 
 export default function Home() {
 	return (
-		<main className="layout-wrapper">
+		<main>
 			{/* <HeroCarousel slides={[slide1, slide2]} /> */}
 			<Hero/>
 			<Item />

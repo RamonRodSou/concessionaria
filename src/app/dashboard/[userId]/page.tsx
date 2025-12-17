@@ -13,7 +13,6 @@ import {
     TableContainer,
     TableHead,
     TableRow,
-    Typography,
 } from "@mui/material";
 import { useEffect, useState } from 'react';
 import { Car } from "@classes/car/Car";
@@ -24,8 +23,7 @@ import { useParams } from 'next/navigation';
 import { useRouter } from 'next/navigation';
 import CarDataModal from '@/app/_component/carDataModal';
 import { AuthProvider } from '@/app/context/AuthContext';
-import FooterNav from '@/app/_component/footerNav';
-import Menu from '@/app/_component/menu';
+
 
 export default function Dasboard() {
     const [page, setPage] = useState<number>(0);
@@ -63,7 +61,7 @@ export default function Dasboard() {
     }, [filtered])
 
     return (
-        <main>
+        <>
             <AuthProvider>
             <Box className='dashboard'>
                 <Search<Car>
@@ -129,6 +127,6 @@ export default function Dasboard() {
                 />
             </Box>
             </AuthProvider>
-        </main>
+        </>
     );
 }
