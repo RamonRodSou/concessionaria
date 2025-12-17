@@ -15,6 +15,7 @@ import { findByCarId } from '../../../../service/CarService';
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import FooterNav from '@/app/_component/footerNav';
 
 export default function CarDetailPage() {
     const [car, setCar] = useState<Car | null>(null);
@@ -116,6 +117,7 @@ export default function CarDetailPage() {
                     </Grid>
                 </Card>
             </Container>
+            <FooterNav/>
         </>
     );
 }
