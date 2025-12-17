@@ -19,9 +19,9 @@
     "aos": "^2.3.4",
     "dayjs": "^1.11.18",
     "firebase": "^12.3.0",
-    "next": "15.5.4",
-    "react": "19.1.0",
-    "react-dom": "19.1.0",
+    "next": "^16.0.10",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
     "react-slick": "^0.31.0",
     "slick-carousel": "^1.8.1",
     "uuid": "^13.0.0"
