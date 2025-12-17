@@ -18,7 +18,7 @@ import "slick-carousel/slick/slick-theme.css";
 
 export default function CarDetailPage() {
     const [car, setCar] = useState<Car | null>(null);
-    const [error, setError] = useState<string | null>(null);
+    const [_, setError] = useState<string | null>(null);
 
     const API_WHATSAPP = process.env.NEXT_PUBLIC_API_WHATSAPP
 
@@ -56,10 +56,8 @@ export default function CarDetailPage() {
     };
 
     return (
-        <html>
-            <header>
-                <Menu />
-            </header>
+        <>
+            <Menu />
             <Container component="main" className='container-car'>
                 <Card raised>
                     <Grid container spacing={4}>
@@ -118,6 +116,6 @@ export default function CarDetailPage() {
                     </Grid>
                 </Card>
             </Container>
-        </html>
+        </>
     );
 }

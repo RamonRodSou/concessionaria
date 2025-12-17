@@ -40,9 +40,7 @@ export default function CategoryCarousel({ title, cars, onCarClick }: CategoryCa
 
             <Box className="carousel-container">
                 {showArrows && (
-                    <IconButton onClick={handleScrollLeft}>
-                        <PrevArrow />
-                    </IconButton>
+                    <PrevArrow onClick={handleScrollLeft}/>
                 )}
                 <Box ref={scrollContainerRef} className="carousel">
                     {activeCars.map((it) => (
@@ -71,9 +69,7 @@ export default function CategoryCarousel({ title, cars, onCarClick }: CategoryCa
                     ))}
                 </Box>
                 {showArrows && (
-                    <IconButton onClick={handleScrollRight}>
-                        <NextArrow />
-                    </IconButton>
+                    <NextArrow onClick={handleScrollRight}/>
                 )}
             </Box>
         </Box>
