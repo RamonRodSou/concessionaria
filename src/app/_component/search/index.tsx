@@ -27,7 +27,7 @@ export default function Search<T>({ data, onFilter, label, searchBy }: SearchPro
             fullWidth
             value={searchTerm.toUpperCase()}
             onChange={(e) => setSearchTerm(e.target.value)}
-            sx={{ marginBottom: '1rem' }}
+            sx={{ marginBottom: '1rem',backgroundColor:'#fff' }}
         />
     );
 }

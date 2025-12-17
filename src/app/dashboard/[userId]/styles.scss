@@ -1,7 +1,11 @@
 .dashboard {
     margin-top: 6rem;
     padding: 2rem;
-    background-color: var(--third);
+    background-color: var(--background);
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    height: 100dvh;
 
     .tableContainer {
         background-color: var(--third);

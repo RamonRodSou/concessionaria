@@ -18,8 +18,10 @@ export default function FooterNav() {
     return (
         <Box className="footer" onClick={handleClick}>
             <p className='description'>© Copyright</p>
-            <Image src={logo} alt="Logo Technosou Solution" width={20} />
-            <p className='description'>Technosou & Panda Hub - Since 2023</p>
+            <span>            
+                <Image src={logo} alt="Logo Technosou Solution" width={20} />
+                <p className='description'>Technosou & Panda Hub - Since 2023</p>
+            </span>
         </Box>
     )
 }

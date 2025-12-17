@@ -117,7 +117,6 @@ export default function CarDetailPage() {
                     </Grid>
                 </Card>
             </Container>
-            <FooterNav/>
         </>
     );
 }

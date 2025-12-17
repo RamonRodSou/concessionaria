@@ -3,6 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "@css/reset.scss";
 import "@css/globals.css";
 import AOSProvider from "./provider/AOSProvider";
+import Menu from "./_component/menu";
+import FooterNav from "./_component/footerNav";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -19,7 +21,7 @@ export const metadata: Metadata = {
   description: "Abravanel",
   icons: {
     icon: [
-      { url: './favicon.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon.png', sizes: '32x32', type: 'image/png' },
     ],
   },
 };
@@ -30,15 +32,25 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR">
-      <head>
-        <link rel="icon" href="./favicon.png" type="image/png" sizes="32x32" />
+    <html lang="pt-br">
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <AOSProvider>
+          <div className="layout-wrapper">
+            
+            <header>
+                <Menu/>
+            </header>
 
-      </head>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <AOSProvider>{children}</AOSProvider>
+            <main>
+              {children}
+            </main>
+
+            <footer>
+              <FooterNav />
+            </footer>
+
+          </div>
+        </AOSProvider>
       </body>
     </html>
   );

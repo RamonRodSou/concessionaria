@@ -13,6 +13,7 @@ import {
     TableContainer,
     TableHead,
     TableRow,
+    Typography,
 } from "@mui/material";
 import { useEffect, useState } from 'react';
 import { Car } from "@classes/car/Car";
@@ -62,80 +63,72 @@ export default function Dasboard() {
     }, [filtered])
 
     return (
-        <div>
-            <header>
-                <Menu />
-            </header>
-            <main>
-                <AuthProvider>
-                <Box className='dashboard'>
-                    <Search<Car>
-                        data={data}
-                        onFilter={setFiltered}
-                        label={'Buscar Carro'}
-                        searchBy={(item, term) =>
-                            item.model.toLowerCase().includes(term.toLowerCase())                    }
-                    />
-                    <TableContainer 
-                        component={Paper} 
-                        className='tableContainer'
-                        sx={{ maxHeight: '70vh' }} 
-                    >                        
-                        <Table size="small">
-                            <TableHead>
-                                <TableRow>
-                                    <TableCell className='title-secondary table'>Image</TableCell>
-                                    <TableCell className='title-secondary table'>Modelo</TableCell>
-                                    <TableCell className='title-secondary table'>Valor</TableCell>
-                                    <TableCell className='title-secondary table'>Cor</TableCell>
-                                    <TableCell className='title-secondary table'>Ano</TableCell>
-                                    <TableCell className='title-secondary table'>Categoria</TableCell>
-                                    <TableCell className='title-secondary table'>No Estoque</TableCell>
-                                    <TableCell className='title-secondary table'>Info</TableCell>
-                                </TableRow>
-                            </TableHead>
-                            <TableBody>
-                                {filtered
-                                    .map((it) => (
-                                        <TableRow key={it.id} className='data-table'>
-                                            <TableCell className='data-text'>
-                                                <Avatar
-                                                    src={it.image.at(0)}
-                                                    alt={it.model}  
-                                                    variant="rounded"
-                                                    sx={{ width: 56, height: 56 }}
-                                                />
-                                            </TableCell>
-                                            <TableCell className='data-text'>{it.model}</TableCell>
-                                            <TableCell className='data-text'>{it.price}</TableCell>
-                                            <TableCell className='data-text'>{it.color}</TableCell>
-                                            <TableCell className='data-text'>{it.year}</TableCell>
-                                            <TableCell className='data-text'>{it.category}</TableCell>
-                                            <TableCell className='data-text'>{it.isActive ? 'Sim' : 'Não'}</TableCell>
-                                            
-                                            <TableCell className='data-text'>
-                                                <IconButton onClick={() => handleOpenDetails(it)}>
-                                                    <Info />
-                                                </IconButton>
-                                            </TableCell>
+        <main>
+            <AuthProvider>
+            <Box className='dashboard'>
+                <Search<Car>
+                    data={data}
+                    onFilter={setFiltered}
+                    label={'Buscar Carro'}
+                    searchBy={(item, term) =>
+                        item.model.toLowerCase().includes(term.toLowerCase())                    }
+                />
+                <TableContainer 
+                    component={Paper} 
+                    className='tableContainer'
+                    sx={{ maxHeight: '70vh' }} 
+                >                        
+                    <Table size="small">
+                        <TableHead>
+                            <TableRow>
+                                <TableCell className='title-secondary table'>Image</TableCell>
+                                <TableCell className='title-secondary table'>Modelo</TableCell>
+                                <TableCell className='title-secondary table'>Valor</TableCell>
+                                <TableCell className='title-secondary table'>Cor</TableCell>
+                                <TableCell className='title-secondary table'>Ano</TableCell>
+                                <TableCell className='title-secondary table'>Categoria</TableCell>
+                                <TableCell className='title-secondary table'>No Estoque</TableCell>
+                                <TableCell className='title-secondary table'>Info</TableCell>
+                            </TableRow>
+                        </TableHead>
+                        <TableBody>
+                            {filtered
+                                .map((it) => (
+                                    <TableRow key={it.id} className='data-table'>
+                                        <TableCell className='data-text'>
+                                            <Avatar
+                                                src={it.image.at(0)}
+                                                alt={it.model}  
+                                                variant="rounded"
+                                                sx={{ width: 56, height: 56 }}
+                                            />
+                                        </TableCell>
+                                        <TableCell className='data-text'>{it.model}</TableCell>
+                                        <TableCell className='data-text'>{it.price}</TableCell>
+                                        <TableCell className='data-text'>{it.color}</TableCell>
+                                        <TableCell className='data-text'>{it.year}</TableCell>
+                                        <TableCell className='data-text'>{it.category}</TableCell>
+                                        <TableCell className='data-text'>{it.isActive ? 'Sim' : 'Não'}</TableCell>
+                                        
+                                        <TableCell className='data-text'>
+                                            <IconButton onClick={() => handleOpenDetails(it)}>
+                                                <Info />
+                                            </IconButton>
+                                        </TableCell>
 
-                                        </TableRow>
-                                    ))}
-                            </TableBody>
-                        </Table>
-                    </TableContainer>
-                    <NewBtn navTo={() => navToNewForm()} />
-                    <CarDataModal
-                        open={openData}
-                        onClose={() => setOpenData(false)}
-                        car={selectedCar}
-                    />
-                </Box>
-                </AuthProvider>
-            </main>
-            <footer>
-                <FooterNav />
-            </footer>
-        </div>
+                                    </TableRow>
+                                ))}
+                        </TableBody>
+                    </Table>
+                </TableContainer>
+                <NewBtn navTo={() => navToNewForm()} />
+                <CarDataModal
+                    open={openData}
+                    onClose={() => setOpenData(false)}
+                    car={selectedCar}
+                />
+            </Box>
+            </AuthProvider>
+        </main>
     );
 }
